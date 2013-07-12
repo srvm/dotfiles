@@ -1,0 +1,6 @@
+# Always sort files
+--sort-files
+
+# Search CUDA files when type is CPP
+--type-add=cpp=.cu
+
