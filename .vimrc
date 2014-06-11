@@ -6,11 +6,25 @@ filetype plugin indent on
 set nocompatible
 
 " Enable Pathogen autoload
+" call pathogen#infect()
 
-call pathogen#infect()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
-" Change this to the correct path
-set rtp+=[Path to Powerline Bindings]
+" Let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Other plugins
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'kien/ctrlp.vim'
+Plugin 'yegappan/mru'
+Plugin 'mileszs/ack.vim'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'bling/vim-airline'
+
+call vundle#end()
 
 set ofu=syntaxcomplete#Complete
 syn on
