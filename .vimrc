@@ -20,6 +20,7 @@ Plugin 'yegappan/mru'
 Plugin 'mileszs/ack.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'bling/vim-airline'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
 
@@ -73,7 +74,7 @@ set noautoindent
 set smartindent
 set formatoptions+=r
 if has('gui_running')
-  set guifont=Liberation\ Mono\ 10
+  set guifont=Liberation\ Mono\ for\ Powerline\ 10
   set guioptions-=T
 endif
 
@@ -104,7 +105,7 @@ nnoremap <Leader>b :BufExplorer<CR>
 nnoremap <Leader>t :tabn<CR>
 nnoremap <Leader>T :tabp<CR>
 
-map <Leader>g :Ack 
+map <Leader>g :Ack
 
 nnoremap <C-P> :RainbowParenthesesToggle<CR>
 
@@ -133,7 +134,7 @@ cmap w!! w !sudo tee % >/dev/null
 " -- Status Line Config --
 
 set laststatus=2
-" set statusline=%<%F%h%m%r%h%w%y[%{CurDir()}%h]\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ line:%l\/%L\ col:%c%V\ pos:%o\ %P 
+" set statusline=%<%F%h%m%r%h%w%y[%{CurDir()}%h]\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ line:%l\/%L\ col:%c%V\ pos:%o\ %P
 
 set statusline=   " clear the statusline for when vimrc is reloaded
 set statusline+=%-3.3n\                      " buffer number
@@ -152,6 +153,7 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 " -- PLUGIN STUFF --
 
 let g:ctrlp_cmd = 'CtrlPMixed'
+let g:airline_powerline_fonts = 1
 
 " -_ MISC _-
 
