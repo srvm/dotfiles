@@ -74,7 +74,7 @@ set noautoindent
 set smartindent
 set formatoptions+=r
 if has('gui_running')
-  set guifont=Liberation\ Mono\ for\ Powerline\ 10
+  set guifont=Liberation\ Mono\ 10
   set guioptions-=T
 endif
 
@@ -111,7 +111,7 @@ nnoremap <C-P> :RainbowParenthesesToggle<CR>
 
 " Tagbar
 set shell=/bin/bash
-nnoremap <C-T> :TagbarToggle<CR>
+nnoremap <C-T> :NERDTreeToggle<CR>
 
 nnoremap <Leader>f za
 
