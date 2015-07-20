@@ -21,6 +21,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
 
@@ -74,7 +75,7 @@ set noautoindent
 set smartindent
 set formatoptions+=r
 if has('gui_running')
-  set guifont=Liberation\ Mono\ 10
+  set guifont=Liberation\ Mono\ 12
   set guioptions-=T
 endif
 
@@ -118,10 +119,10 @@ nnoremap <Leader>f za
 " Window shortcuts
 nnoremap <Leader>s <C-W>v
 
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
-nnoremap <C-H> <C-W>h
+"nnoremap <C-J> <C-W>j
+"nnoremap <C-K> <C-W>k
+"nnoremap <C-L> <C-W>l
+"nnoremap <C-H> <C-W>h
 
 nnoremap j gj
 nnoremap k gk
@@ -167,3 +168,19 @@ else
 	colors marklar
 	set mouse=a
 endif
+
+" -- EASYMOTION -- "
+
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_startofline = 0
+nmap s <Plug>(easymotion-s)
+
+map <C-j> <Plug>(easymotion-j)
+map <C-k> <Plug>(easymotion-k)
+map <C-l> <Plug>(easymotion-lineforward)
+map <C-h> <Plug>(easymotion-linebackward)
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
