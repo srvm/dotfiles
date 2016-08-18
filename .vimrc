@@ -1,6 +1,5 @@
 " VIMRC - Saurav Muralidharan
 " Created: 08/24/08
-" Last Modified: 07/23/2013
 
 filetype plugin indent on
 set nocompatible
@@ -21,14 +20,13 @@ Plugin 'mileszs/ack.vim'
 Plugin 'jlanzarotta/bufexplorer'
 Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
 
-set ofu=syntaxcomplete#Complete
 syn on
-set encoding=utf8
 autocmd FileType c,cpp,slang set cindent
+set ofu=syntaxcomplete#Complete
+set encoding=utf8
 set undolevels=1000
 set hidden
 set history=50
@@ -75,8 +73,9 @@ set noautoindent
 set smartindent
 set formatoptions+=r
 if has('gui_running')
-  set guifont=Liberation\ Mono\ 12
   set guioptions-=T
+  set guioptions-=r
+  set guifont=Cousine\ for\ Powerline\ 12
 endif
 
 " Remove trailing whitespaces and ^M chars
@@ -119,10 +118,10 @@ nnoremap <Leader>f za
 " Window shortcuts
 nnoremap <Leader>s <C-W>v
 
-"nnoremap <C-J> <C-W>j
-"nnoremap <C-K> <C-W>k
-"nnoremap <C-L> <C-W>l
-"nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+nnoremap <C-H> <C-W>h
 
 nnoremap j gj
 nnoremap k gk
@@ -161,26 +160,11 @@ let g:airline_powerline_fonts = 1
 au BufNewFile,BufRead *.cu set syn=cpp
 au BufNewFile,BufRead *.cuh set syn=cpp
 
+" Set colorscheme
 if has('gui_running')
 	colors solarized
 	set background=dark
 else
-	colors marklar
+	colorscheme marklar
 	set mouse=a
 endif
-
-" -- EASYMOTION -- "
-
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_startofline = 0
-nmap s <Plug>(easymotion-s)
-
-map <C-j> <Plug>(easymotion-j)
-map <C-k> <Plug>(easymotion-k)
-map <C-l> <Plug>(easymotion-lineforward)
-map <C-h> <Plug>(easymotion-linebackward)
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
