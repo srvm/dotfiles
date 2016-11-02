@@ -34,4 +34,8 @@ alias gci='git commit'
 alias gp='git push'
 alias gl='git pull'
 
+alias sc='scons'
+alias scc='scons -c'
+alias scs='scons -c; scons'
+
 . ~/.config/fish/set_paths
