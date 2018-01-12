@@ -35,6 +35,8 @@ set autoread
 set noswapfile
 set nobackup
 set nofoldenable       " Disable folding
+set colorcolumn=80
+
 
 set scrolloff=5        " Show next 3 lines while scrolling.
 set sidescrolloff=10   " Show next 5 columns while side-scrolling.
@@ -46,6 +48,8 @@ colorscheme sorcerer
 " Indent
 set autoindent
 set smartindent
+autocmd FileType c,cpp,slang set cindent
+autocmd FileType python setl ts=2 sw=2 sts=2 et
 
 " Tabs
 set smarttab
@@ -56,8 +60,6 @@ set softtabstop=2
 
 au BufNewFile,BufRead *.cu set syn=cpp
 au BufNewFile,BufRead *.cuh set syn=cpp
-
-autocmd FileType python setl ts=2 sw=2 sts=2 et
 
 " Plugin configuration
 let g:airline_powerline_fonts = 1
