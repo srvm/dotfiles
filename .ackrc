@@ -1,3 +1,9 @@
+# Ignore certain directories
+--ignore-dir=log
+--ignore-dir=doc
+--ignore-dir=docs
+--ignore-dir=tmp
+
 # Always sort files
 --sort-files
 
