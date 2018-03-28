@@ -18,13 +18,17 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'yegappan/mru'
 Plugin 'mileszs/ack.vim'
 Plugin 'jlanzarotta/bufexplorer'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'vim-jp/vim-cpp'
+Plugin 'Konfekt/vim-alias'
 
 call vundle#end()
 
 syn on
 autocmd FileType c,cpp,slang set cindent
+autocmd FileType python setl ts=2 sw=2 sts=2 et
 set ofu=syntaxcomplete#Complete
 set encoding=utf8
 set undolevels=1000
@@ -37,9 +41,11 @@ set showmatch
 set number
 set wildmenu
 set expandtab
+set t_Co=256
+set cursorline
 
 " Ignore binary files
-set wildignore=*.o,*~
+set wildignore=*.o,*~,*/tmp/*,*.so,*.swp,*.zip
 set wildmode=list:longest,full
 
 " Auto read when a file is changed externally
@@ -50,7 +56,7 @@ set wmh=0
 set ruler
 
 " Folding
-set foldmethod=syntax
+"set foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
 set foldlevel=1
@@ -70,10 +76,11 @@ set tabstop=2
 set softtabstop=2
 set nowrap
 set noautoindent
-set smartindent
+" set smartindent
 set formatoptions+=r
 if has('gui_running')
   set guioptions-=T
+  set guioptions-=L
   set guioptions-=r
   set guifont=Cousine\ for\ Powerline\ 12
 endif
@@ -108,12 +115,23 @@ nnoremap <Leader>T :tabp<CR>
 map <Leader>g :Ack
 
 nnoremap <C-P> :RainbowParenthesesToggle<CR>
+nnoremap <C-[> :cprevious<CR>
+nnoremap <C-]> :cnext<CR>
+
+" Remap arrow keys for Mac + iTerm2
+map OA <up>
+map OB <down>
+map OD <left>
+map OC <right>
+
+set pastetoggle=<F3>
 
 " Tagbar
 set shell=/bin/bash
 nnoremap <C-T> :NERDTreeToggle<CR>
+nnoremap <Leader>f :NERDTreeFind<CR>
 
-nnoremap <Leader>f za
+"nnoremap <Leader>f za
 
 " Window shortcuts
 nnoremap <Leader>s <C-W>v
@@ -130,6 +148,12 @@ nmap <silent> <Leader>n :set nolist!<CR>
 
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
+
+autocmd VimEnter * :Alias gs Gstatus
+autocmd VimEnter * :Alias ga Gwrite
+autocmd VimEnter * :Alias gci Gcommit
+autocmd VimEnter * :Alias gp Gpush
+autocmd VimEnter * :Alias gl Gpull
 
 " -- Status Line Config --
 
@@ -153,6 +177,7 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 " -- PLUGIN STUFF --
 
 let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:airline_powerline_fonts = 1
 
 " -_ MISC _-
@@ -163,8 +188,8 @@ au BufNewFile,BufRead *.cuh set syn=cpp
 " Set colorscheme
 if has('gui_running')
 	colors solarized
-	set background=dark
+	set background=light
 else
-	colorscheme marklar
+	colorscheme sorcerer
 	set mouse=a
 endif
