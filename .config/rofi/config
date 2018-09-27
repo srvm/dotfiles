@@ -1,0 +1,5 @@
+rofi.columns: 1
+rofi.lines: 10
+rofi.font: Roboto Mono 10
+rofi.hid-scrollbar: True
+rofi.theme: /usr/share/rofi/themes/glue_pro_blue.rasi
