@@ -4,28 +4,6 @@
 filetype plugin indent on
 set nocompatible
 
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-
-" Let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" Other plugins
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'kien/ctrlp.vim'
-Plugin 'yegappan/mru'
-Plugin 'mileszs/ack.vim'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'vim-jp/vim-cpp'
-Plugin 'Konfekt/vim-alias'
-
-call vundle#end()
-
 syn on
 autocmd FileType c,cpp,slang set cindent
 autocmd FileType python setl ts=2 sw=2 sts=2 et
@@ -149,12 +127,6 @@ nmap <silent> <Leader>n :set nolist!<CR>
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
 
-autocmd VimEnter * :Alias gs Gstatus
-autocmd VimEnter * :Alias ga Gwrite
-autocmd VimEnter * :Alias gci Gcommit
-autocmd VimEnter * :Alias gp Gpush
-autocmd VimEnter * :Alias gl Gpull
-
 " -- Status Line Config --
 
 set laststatus=2
@@ -185,11 +157,3 @@ let g:airline_powerline_fonts = 1
 au BufNewFile,BufRead *.cu set syn=cpp
 au BufNewFile,BufRead *.cuh set syn=cpp
 
-" Set colorscheme
-if has('gui_running')
-	colors solarized
-	set background=light
-else
-	colorscheme sorcerer
-	set mouse=a
-endif
