@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Notion
+StartupWMClass=Notion
+Comment=Notion
+GenericName=Notion Client for Linux
+Exec=/usr/bin/firefox -P Notion --ssb https://notion.so --class Notion
+#Icon=
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Network;
+MimeType=x-scheme-handler/roam;

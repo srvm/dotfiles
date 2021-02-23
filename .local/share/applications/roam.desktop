@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Roam
+StartupWMClass=Roam
+Comment=Roam Desktop
+GenericName=Roam Client for Linux
+Exec=/usr/bin/firefox -P Roam --ssb https://roamresearch.com --class Roam
+#Icon=
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Network;
+MimeType=x-scheme-handler/roam;
