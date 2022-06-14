@@ -2,12 +2,9 @@ bind \cl 'forward-char'
 bind \ck 'history-search-backward'
 bind \cj 'history-search-forward'
 
-set -x EDITOR nvim
+set -x EDITOR vim
 
-alias s='svn'
-alias g='gvim'
-alias v='nvim'
-alias vimdiff='nvim -d'
+alias vimdiff='vim -d'
 alias m='make'
 alias mc='make clean'
 alias mcm='make clean; make'
@@ -20,10 +17,11 @@ alias lll='ls -aFlhs | less'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-alias sagi='sudo aptitude install'
-alias sagr='sudo aptitude remove'
+alias sagi='sudo apt install'
+alias sagu='sudo apt update'
+alias sagr='sudo apt upgrade'
+alias sagx='sudo apt remove'
 alias dum='du -h --max-depth=1'
-alias soc='ssh -Y soc'
 alias pd='pushd -n'
 alias bd='popd'
 alias t='tmux'
@@ -37,8 +35,4 @@ alias gci='git commit'
 alias gp='git push'
 alias gl='git pull'
 
-alias sc='scons'
-alias scc='scons -c'
-alias scs='scons -c; scons'
-
-. ~/.config/fish/set_paths
+. ~/.config/fish/fishenv
