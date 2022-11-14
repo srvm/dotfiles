@@ -5,6 +5,7 @@
     "editor.autoClosingBrackets": "never",
     "keyboard.dispatch": "keyCode",
 
+    "vim.easymotion": true,
     "vim.sneak": true,
     "vim.incsearch": true,
     "vim.hlsearch": true,
@@ -23,6 +24,10 @@
     {
       "before": ["H"],
       "after": ["^"]
+    },
+    {
+      "before": [","],
+      "after": ["<leader>", "<leader>", "<leader>", "b", "d", "w"]
     }
   ]
 }
